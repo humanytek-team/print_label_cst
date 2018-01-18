@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="print_label_prod2">
+            <t t-call="report.html_container">
+
+                <t
+                    t-call="print_label_cst.prod_report_document2"
+                    t-lang="user.partner_id.lang"/>
+            </t>
+        </template>
+
+        <!-- Translatable template -->
+        <template id="prod_report_document2">
+            <t t-set="docs" t-value="docs.with_context({'lang':user.partner_id.lang})" />
+            <!--<t t-call="report.external_layout">-->
+                <t t-foreach="docs" t-as="o">
+                    <t t-foreach="o.order_line" t-as="line">
+
+                        <t t-foreach="decimal_format(line.product_qty)" t-as="qty">
+                            <div class="page">
+                                <div class="row" >
+                                    <div class="col-xs-6" style="font-size: 12px; margin-top:0; margin-bottom:0;">
+                                        <strong><span t-esc="o.company_id.name" /></strong>
+                                    </div>
+                                    <div class="col-xs-6" style="font-size: 12px; margin-top:0; margin-bottom:0;">
+                                        <strong><span t-esc="o.date_order" />
+                                        </strong>
+
+                                    </div>
+                                    <!--<div class="col-xs-4" style="font-size: 14px; margin-top:0; margin-bottom:0;">
+                                        <strong><span t-esc="o.sale_id.type_id.name" /></strong>
+                                    </div>-->
+                                </div>
+                                <br/>
+                                <div class="row" >
+                                    <div class="col-xs-10" >
+                                        <div class="row" style="font-size: 16px;">
+                                            <div class="col-xs-4" style="margin-top:0; margin-bottom:0;">
+                                                <strong><span t-esc="line.product_id.season_id.name" /></strong>
+                                            </div>
+                                            <div class="col-xs-8" style="margin-top:0; margin-bottom:0;">
+                                                <strong><span t-esc="line.product_id.product_tmpl_id.product_brand_id.name" />
+                                                </strong>
+                                            </div>
+
+                                        </div>
+                                        <br/>
+                                        <div class="row" style="font-size: 16px;">
+                                            <strong><span t-esc="line.product_id.product_color_id.name" /></strong>
+                                        </div>
+                                        <div class="row" style="font-size: 16px;">
+                                            <strong><span t-esc="line.product_id.default_code" /></strong>
+                                        </div>
+                                        <div class="row" style="font-size: 12px;">
+                                            <strong>Acabado: </strong>
+                                            <span t-if="line.product_id.product_box_id" >
+                                                <strong>CAJA: <span t-esc="line.product_id.product_box_id.name" /></strong>
+                                            </span>
+                                            <span t-if="not line.product_id.product_box_id">
+                                                <strong>N/A</strong>
+                                            </span>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-xs-2 " style="width: 10px; ">
+                                        <div class="row " style="font-size: 8px; layout-flow: vertical-ideographic; transform-origin: left top 0;">
+                                            <!--<span t-esc="get_pick(line.product_id.id, line.id)" />-->
+                                            <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', get_pick(line.product_id.id, line.id), 600, 100)" style="width:100px;height:20px; transform: rotate(-90deg); transform-origin: left top 0;-webkit-transform: rotate(-90deg);"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                <div class="col-xs-9 " name="left_box">
+                                    <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', line.product_id.product_tmpl_id.barcode, 600, 100)" style="width:300px;height:50px; "/>
+                                </div>
+                                <div class="col-xs-3" style="font-size: 50px;">
+                                    <span t-if="line.product_id.attribute_value_ids" >
+                                        <strong><span t-esc="line.product_id.attribute_value_ids[0].name" /></strong>
+                                    </span>
+                                </div>
+                                <div class="col-xs-8 text-right" >
+                                    <span t-esc="line.product_id.product_tmpl_id.barcode" />
+
+                                </div>
+                            </div>
+
+                            </div>
+                        </t>
+                    </t>
+                </t>
+            <!--</t>-->
+        </template>
+
+    </data>
+</odoo>
