@@ -20,8 +20,8 @@
 
                         <t t-foreach="decimal_format(line.product_qty)" t-as="qty">
                             <div class="page">
-                                <div class="row" >
-                                    <div class="col-xs-6" style="font-size: 12px; margin-top:0; margin-bottom:0;">
+                                <div class="row" style="border: 0px solid #ddd">
+                                    <div class="col-xs-6" style="font-size: 14px; margin-top:0; margin-bottom:0;">
                                         <strong><span t-esc="o.company_id.name" /></strong>
                                     </div>
                                     <div class="col-xs-6" style="font-size: 12px; margin-top:0; margin-bottom:0;">
@@ -29,24 +29,21 @@
                                         </strong>
 
                                     </div>
-                                    <!--<div class="col-xs-4" style="font-size: 14px; margin-top:0; margin-bottom:0;">
-                                        <strong><span t-esc="o.sale_id.type_id.name" /></strong>
-                                    </div>-->
                                 </div>
-                                <br/>
-                                <div class="row" >
-                                    <div class="col-xs-10" >
-                                        <div class="row" style="font-size: 16px;">
-                                            <div class="col-xs-4" style="margin-top:0; margin-bottom:0;">
+                                <!--<br/>-->
+                                <div class="row" style="border: 0px solid #ddd">
+                                    <div class="col-xs-10" style="border: 0px solid #ddd">
+                                        <div class="row" style="font-size: 16px;border: 0px solid #ddd">
+                                            <div class="col-xs-5" style="margin-top:0; margin-bottom:0;">
                                                 <strong><span t-esc="line.product_id.season_id.name" /></strong>
                                             </div>
-                                            <div class="col-xs-8" style="margin-top:0; margin-bottom:0;">
+                                            <div class="col-xs-7" style="margin-top:0; margin-bottom:0;">
                                                 <strong><span t-esc="line.product_id.product_tmpl_id.product_brand_id.name" />
                                                 </strong>
                                             </div>
 
                                         </div>
-                                        <br/>
+                                        <!--<br/>-->
                                         <div class="row" style="font-size: 16px;">
                                             <strong><span t-esc="line.product_id.product_color_id.name" /></strong>
                                         </div>
@@ -64,23 +61,23 @@
                                         </div>
 
                                     </div>
-                                    <div class="col-xs-2 " style="width: 10px; ">
-                                        <div class="row " style="font-size: 8px; layout-flow: vertical-ideographic; transform-origin: left top 0;">
-                                            <!--<span t-esc="get_pick(line.product_id.id, line.id)" />-->
-                                            <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', get_pick(line.product_id.id, line.id), 600, 100)" style="width:100px;height:20px; transform: rotate(-90deg); transform-origin: left top 0;-webkit-transform: rotate(-90deg);"/>
+                                    <div class="col-xs-2 " style="border: 0px solid #ddd;font-size: 6px">
+                                        <div class="row " style="font-size: 6px; layout-flow: vertical-ideographic; transform-origin: left top 0;border: 0px solid #ddd; transform: rotate(-90deg); transform-origin: left top 0;-webkit-transform: rotate(-90deg)">
+                                            <span t-esc="get_pick(line.product_id.id, line.id)" style="font-size: 6px; border: 0px solid #ddd; transform: rotate(-90deg); transform-origin: left top 0;-webkit-transform: rotate(-90deg);layout-flow: vertical-ideographic;"/>
+                                            <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', get_pick(line.product_id.id, line.id), 60, 10)" style="width:60px;height:20px;border: 0px solid #ddd;margin:0px"/>
                                         </div>
                                     </div>
                                 </div>
                                 <div>
-                                <div class="col-xs-9 " name="left_box">
-                                    <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', line.product_id.product_tmpl_id.barcode, 600, 100)" style="width:300px;height:50px; "/>
+                                <div class="col-xs-8 " name="left_box" style="border: 0px solid #ddd">
+                                    <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', line.product_id.product_tmpl_id.barcode, 600, 100)" style="width:200px;height:30px; "/>
                                 </div>
-                                <div class="col-xs-3" style="font-size: 50px;">
+                                <div class="col-xs-4" style="font-size: 40px;border: 0px solid #ddd">
                                     <span t-if="line.product_id.attribute_value_ids" >
                                         <strong><span t-esc="line.product_id.attribute_value_ids[0].name" /></strong>
                                     </span>
                                 </div>
-                                <div class="col-xs-8 text-right" >
+                                <div class="col-xs-8 text-right" style="font-size: 8px;border: 0px solid #ddd">
                                     <span t-esc="line.product_id.product_tmpl_id.barcode" />
 
                                 </div>
