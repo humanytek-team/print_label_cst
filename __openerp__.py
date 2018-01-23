@@ -34,12 +34,8 @@
                 'product_brand'
                 ],
     'data': [
-        #'view/stock_picking_view.xml',
         'report/print_label_report.xml',
         'report/print_label_report_templates.xml',
-        #'report/print_label_shipping_report_templates.xml',
-        #'report/print_order_shipping_report_templates.xml',
-        #'report/print_label_mrp_report_templates.xml',
         'data/print_label_data.xml'
     ],
     'demo': [
