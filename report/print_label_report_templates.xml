@@ -60,11 +60,11 @@
                                             </span>
                                         </div>
                                     </div>
-                                    <div class="col-xs-2 " style="border: 0px solid #ddd;font-size: 10px; height: 140px; ">
-                                        <div class="row table table-condensed" style="font-size: 10px; layout-flow: vertical-ideographic; transform-origin: left top 0;border: 0px solid #ddd; transform: rotate(-90deg); transform-origin: left top 0;-webkit-transform: rotate(-90deg); width:140px;  ">
-                                            <div class="col-xs-12 " style="border: 0px solid #ddd;font-size: 10px; width: 140px; margin-left: -140px">
+                                    <div class="col-xs-2 " style="border: 0px solid #ddd;font-size: 10px; height: 130px; ">
+                                        <div class="row table table-condensed" style="font-size: 10px; layout-flow: vertical-ideographic; transform-origin: left top 0;border: 0px solid #ddd; transform: rotate(-90deg); transform-origin: left top 0;-webkit-transform: rotate(-90deg); width:130px;  ">
+                                            <div class="col-xs-12 " style="border: 0px solid #ddd;font-size: 10px; width: 140px; margin-left: -130px">
                                                 <span t-esc="get_pick(line.product_id.id, line.id)" style="font-size: 10px; border: 0px solid #ddd; transform: rotate(-90deg); transform-origin: left top 0;-webkit-transform: rotate(-90deg);layout-flow: vertical-ideographic; margin-left: 40px"/>
-                                                <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', get_pick(line.product_id.id, line.id), 600, 100)" style="width:165px;height:30px;border: 0px solid #ddd;"/>
+                                                <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', get_pick(line.product_id.id, line.id), 600, 100)" style="width:155px;height:30px;border: 0px solid #ddd;"/>
                                             </div>
                                         </div>
                                     </div>
