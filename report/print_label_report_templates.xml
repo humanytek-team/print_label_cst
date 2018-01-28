@@ -63,6 +63,20 @@
                                                 <strong>N/A</strong>
                                             </span>
                                         </div>
+                                        <div class="container" style="border: 0px solid #ddd; margin-top: 0px ">
+                                            <div class="row " style="border: 0px solid #ddd; ">
+                                                <div class="col-xs-8 text-left">
+                                                    <div class="col-xs-12 text-left" name="left_box" style="border: 0px solid #ddd; margin-left: -60px; margin-top: 0px">
+                                                        <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', line.product_id.barcode, 600, 100)" style="width:250;height:30px; display: flex; justify-content: left" class="pull-left"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-8 text-center" style="font-size: 14px;border: 0px solid #ddd; margin-top: 0px">
+                                                    <span t-esc="line.product_id.barcode" />
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="col-xs-2 " style="border: 0px solid #ddd;font-size: 10px; height: 200px; margin-right: -45px">
                                         <div class="row table table-condensed" style="font-size: 10px; layout-flow: vertical-ideographic; transform-origin: left top 0;border: 0px solid #ddd; transform: rotate(-90deg); transform-origin: left top 0;-webkit-transform: rotate(-90deg); width:200px; margin-right: -45px ">
@@ -73,22 +87,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="container" style="border: 0px solid #ddd; margin-top:0px ">
-                                    <div class="row " style="border: 0px solid #ddd; ">
-                                        <div class="col-xs-8 text-left">
-                                            <div class="col-xs-12 text-left" name="left_box" style="border: 0px solid #ddd; margin-left: -60px; margin-top: -5px">
-                                                <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', line.product_id.barcode, 600, 100)" style="width:250;height:30px; display: flex; justify-content: left" class="pull-left"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xs-8 text-center" style="font-size: 14px;border: 0px solid #ddd; margin-top: 0px">
-                                            <span t-esc="line.product_id.barcode" />
-                                        </div>
-                                    </div>
-                                </div>
-
-
                             </div>
                         </t>
                     </t>
