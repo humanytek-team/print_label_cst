@@ -30,13 +30,13 @@
                                 <div class="row " style="border: 0px solid #ddd">
                                     <div class="col-xs-10" style="border: 0px solid #ddd">
                                         <div class="row" style="border: 0px solid #ddd">
-                                             <div class="col-xs-12" style="font-size: 12px; margin-top:0; margin-bottom:0;">
-                                                 <span t-esc="get_pick(line.product_id.id, line.id)" style="font-size: 10px; border: 0px solid #ddd; "/>
+                                             <div class="col-xs-12 text-center" style="font-size: 12px; margin-top:0; margin-bottom:0;">
                                                  <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', get_pick(line.product_id.id, line.id), 600, 100)" style="width:250px;height:30px;border: 0px solid #ddd; "/>
+                                                 <span t-esc="get_pick(line.product_id.id, line.id)" style="font-size: 10px; border: 0px solid #ddd; "/>
                                              </div>
                                         </div>
 
-                                        <div class="row" style="font-size: 20px;border: 0px solid #ddd">
+                                        <div class="row" style="font-size: 18px;border: 0px solid #ddd">
                                             <div class="col-xs-5" style="margin-top:0; margin-bottom:0;border: 0px solid #ddd">
                                                 <strong><span t-esc="line.product_id.season_id.name" /></strong>
                                             </div>
@@ -45,10 +45,10 @@
                                                 </strong>
                                             </div>
                                         </div>
-                                        <div class="row" style="font-size: 20px;border: 0px solid #ddd;">
+                                        <div class="row" style="font-size: 18px;border: 0px solid #ddd;">
                                             <strong><span t-esc="line.product_id.product_color_id.name" /></strong>
                                         </div>
-                                        <div class="row" style="font-size: 20px;border: 0px solid #ddd;">
+                                        <div class="row" style="font-size: 18px;border: 0px solid #ddd;">
                                             <div class="col-xs-12">
                                                 <strong><span t-esc="line.product_id.default_code" /></strong>
                                             </div>
@@ -74,6 +74,11 @@
                                                         <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', line.product_id.barcode, 600, 100)" style="width:250;height:30px; display: flex; justify-content: left" class="pull-left"/>
                                                     </div>
                                                 </div>
+                                                <div class="col-xs-4 text-right" style="border: 0px solid #ddd; bottom:0px; ">
+                                                    <span t-if="line.product_id.attribute_value_ids" >
+                                                        <strong><span t-esc="line.product_id.attribute_value_ids[0].name" style="border: 0px solid #ddd;"/></strong>
+                                                    </span>
+                                                </div> 
                                             </div>
                                             <div class="row">
                                                 <div class="col-xs-8 text-center" style="font-size: 14px;border: 0px solid #ddd; margin-top: 0px">
@@ -82,11 +87,14 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-xs-2 " style="border: 0px solid #ddd;font-size: 10px; height: 170px; margin-right: 0px">
-                                        <div class="row table table-condensed" style="font-size: 10px; layout-flow: vertical-ideographic; transform-origin: left top 0;border: 0px solid #ddd; transform: rotate(-90deg); transform-origin: left top 0;-webkit-transform: rotate(-90deg); width:170px; margin-right: 0px ">
-                                            <div class="col-xs-12 " style="border: 0px solid #ddd;font-size: 10px; width: 170px; margin-left: -100px margin-bottom: -25px">
-                                                <span t-esc="o.company_id.name" style="font-size: 10px; border: 0px solid #ddd; transform: rotate(-90deg); transform-origin: left top 0;-webkit-transform: rotate(-90deg);layout-flow: vertical-ideographic; margin-left: 100px;"/>
-                                                <span t-esc="o.date_order" style="font-size: 10px; border: 0px solid #ddd; transform: rotate(-90deg); transform-origin: left top 0;-webkit-transform: rotate(-90deg);layout-flow: vertical-ideographic; margin-left: 100px;"/>
+                                    <div class="col-xs-2 " style="border: 0px solid #ddd;font-size: 10px; height: 170px; margin-right:-45px">
+                                        <div class="row table table-condensed" style="font-size: 12px; layout-flow: vertical-ideographic; transform-origin: left top 0;border: 0px solid #ddd; transform: rotate(-90deg); transform-origin: left top 0;-webkit-transform: rotate(-90deg); width:170px; margin-bottom: 0px ">
+                                            <div class="col-xs-12 " style="border:0px solid #ddd;font-size: 10px; width: 170px; margin-left: -120px; margin-bottom: -25px">
+
+                                                <span t-esc="o.company_id.name" style="width: 170px;border: 0px solid #ddd; transform: rotate(-90deg); transform-origin: left top 0;-webkit-transform: rotate(-90deg);layout-flow: vertical-ideographic;"/>
+                                                <div class="row " style="border: 0px solid #ddd">
+                                                    <span t-esc="o.date_order" style="width: 170px;border: 0px solid #ddd; transform: rotate(-90deg); transform-origin: left top 0;-webkit-transform: rotate(-90deg);layout-flow: vertical-ideographic;"/>
+                                                </div>
                                             </div>
                                             <!--<div class="col-xs-4 text-center" style="border: 0px solid #ddd; bottom:0px; ">
                                                 <span t-if="line.product_id.attribute_value_ids" >
